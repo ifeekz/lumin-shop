@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from 'react-router-dom'
+import logo from '../../assets/images/logo.png';
 
 const navigation = [
     { name: 'Shop', href: '#', current: true },
@@ -14,7 +15,7 @@ function classNames(...classes) {
 
 export default function Header() {
     return (
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="bg-stone-100 border-y border-gray-300">
             {({ open }) => (
                 <>
                     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -34,13 +35,13 @@ export default function Header() {
                                 <div className="flex-shrink-0 flex items-center">
                                     <img
                                         className="block lg:hidden h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                                        alt="Workflow"
+                                        src={logo} 
+                                        alt="Lumin"
                                     />
                                     <img
                                         className="hidden lg:block h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                                        alt="Workflow"
+                                        src={logo}
+                                        alt="Lumin"
                                     />
                                 </div>
                                 <div className="hidden sm:block sm:ml-6">
