@@ -9,13 +9,13 @@ class Home extends React.Component {
                 <Layout>
                     <div className="container sm:max-w-full md:max-w-full lg:max-w-full bg-stone-100">
                         <div className="container mx-auto px-32 py-16">
-                            <div class="flex justify-between">
+                            <div className="flex justify-between">
                                 <div>
                                     <h1 className="text-2xl">All Products</h1>
                                     <p>A 360<sup>o</sup> look at Lumin</p>
                                 </div>
                                 <div>
-                                    <select class="block w-64 px-4 py-3">
+                                    <select className="block w-64 px-4 py-3">
                                         <option value="">Filter by</option>
                                         <option value="price">Price</option>
                                         <option value="new">New Arrival</option>
