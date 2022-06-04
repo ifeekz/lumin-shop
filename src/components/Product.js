@@ -26,7 +26,7 @@ class Product extends React.Component {
                         </p>
                         <button
                             className="bg-stone-700 hover:bg-stone-500 text-white mt-1 py-2 px-4"
-                            onClick={this.addToCart.bind(this, this.props.product.id, this.props.product)}
+                            onClick={this.addToCart.bind(this, this.props.product)}
                         >
                             Add to Cart
                         </button>
