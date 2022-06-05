@@ -1,17 +1,12 @@
 import { useQuery } from "@apollo/client";
 import Layout from '../Layout/Layout';
-import Product from "../../components/Product";
+import Product from "../Product";
 import Loader from "../Product/Loader";
 // import products from "../../data/products.json";
 import { GET_PRODUCTS } from '../../graphql/queries/product'
 
 const Home = () => {
     const { loading, error, data } = useQuery(GET_PRODUCTS);
-    // const products = data.products;
-    console.log('loading: ', loading);
-    console.log('error: ', error);
-    console.log('gql: ', data);
-    // if (loading) return <Loader />;
     if (error) return `Error! ${error}`;
     return (
         <>

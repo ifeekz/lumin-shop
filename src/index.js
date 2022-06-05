@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from 'react-redux';
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+
+import App from "./App";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Home from './components/pages/Home';
+
+import store from './app/store'
 
 const client = new ApolloClient({
   uri: 'https://pangaea-interviews.vercel.app/api/graphql',
@@ -14,13 +17,11 @@ const client = new ApolloClient({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </BrowserRouter>
-    </ApolloProvider>
+    <Provider store={store}>
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
+    </Provider>
   </React.StrictMode>
 );
 

@@ -1,10 +1,12 @@
 import React from "react"
 import Header from "../Header/Header"
+import Cart from "../Product/Cart";
 class Layout extends React.Component {
     render() {
         return (
             <>
                 <Header />
+                <Cart />
                 <main>{this.props.children}</main>
             </>
         )
