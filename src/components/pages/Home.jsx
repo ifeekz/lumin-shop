@@ -5,7 +5,6 @@ import { recalculateCart } from "../slice/cartSlice";
 import Layout from '../Layout/Layout';
 import ProductItem from '../ProductItem';
 import Loader from "../Product/Loader";
-// import products from "../../data/products.json";
 import { GET_PRODUCTS } from '../../graphql/queries/product'
 
 const Home = () => {
