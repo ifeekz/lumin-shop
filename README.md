@@ -1,4 +1,4 @@
-# GraphQL React Boilerplate
+# Pangaea Challenge
 
 <img src="https://i.imgur.com/tBMoE7v.png"/>
 
@@ -63,7 +63,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 - <a href="https://reactjs.org/">React</a>
 - <a href="https://reacttraining.com/react-router/">React Router</a>
-- <a href="https://www.typescriptlang.org/">Redux Toolkit</a>
+- <a href="https://redux-toolkit.js.org/">Redux Toolkit</a>
 - <a href="https://www.apollographql.com/">Apollo</a>
 - <a href="https://tailwindcss.com/">TailwindCSS</a>
 - <a href="https://eslint.org/">ESLint</a>
@@ -77,5 +77,5 @@ Ifeanyi Nnorom
 
 #### (The MIT License)
 
-Copyright (c) 2018 Ifeanyi Nnorom.
+Copyright (c) 2022 Ifeanyi Nnorom.
 You can review license in the LICENSE file.
