@@ -18,7 +18,7 @@ const Home = () => {
         refetch({ currency: currency.currentCurrency }).then((data) => {
             dispatch(recalculateCart(data.data));
         });
-    }, [currency])
+    }, [currency, dispatch, refetch])
 
     if (error) return `Error! ${error}`;
     return (

@@ -91,17 +91,17 @@ const cartSlice = createSlice({
             const productIdsInCart = [];
             const productsInCart = [];
 
-            state.cartItems.map(cartItem => {
+            state.cartItems.forEach(cartItem => {
                 productIdsInCart.push(cartItem.id)
             });
 
-            action.payload.products.map(product => {
+            action.payload.products.forEach(product => {
                 if (productIdsInCart.includes(product.id)) {
                     productsInCart[product.id] = product;
                 }
             });
 
-            state.cartItems.map(cartItem => {
+            state.cartItems.forEach(cartItem => {
                 const existingIndex = state.cartItems.findIndex(
                     (item) => item.id === productsInCart[cartItem.id].id
                 );
