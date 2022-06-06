@@ -1,8 +1,20 @@
-# Getting Started with Create React App
+# GraphQL React Boilerplate
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://i.imgur.com/tBMoE7v.png"/>
 
-## Available Scripts
+GraphQL + React challenge to recreate the luminskin.com product page and cart
+using a GraphQL API in ReactJS.
+
+## Installation
+
+Use these steps to install project
+
+```
+1. npm install
+2. npm start
+```
+
+## Build project:
 
 In the project directory, you can run:
 
@@ -39,28 +51,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
 ### Deployment
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
@@ -68,3 +58,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Main Technologies and libraries
+
+- <a href="https://reactjs.org/">React</a>
+- <a href="https://reacttraining.com/react-router/">React Router</a>
+- <a href="https://www.typescriptlang.org/">Redux Toolkit</a>
+- <a href="https://www.apollographql.com/">Apollo</a>
+- <a href="https://tailwindcss.com/">TailwindCSS</a>
+- <a href="https://eslint.org/">ESLint</a>
+- <a href="https://github.com/prettier/prettier">Prettier</a>
+
+## Author
+
+Ifeanyi Nnorom
+
+## License
+
+#### (The MIT License)
+
+Copyright (c) 2018 Ifeanyi Nnorom.
+You can review license in the LICENSE file.
