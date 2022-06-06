@@ -67,7 +67,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - <a href="https://www.apollographql.com/">Apollo</a>
 - <a href="https://tailwindcss.com/">TailwindCSS</a>
 - <a href="https://eslint.org/">ESLint</a>
-- <a href="https://github.com/prettier/prettier">Prettier</a>
 
 ## Author
 
