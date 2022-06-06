@@ -1,7 +1,7 @@
 import React from 'react'
 import ContentLoader from 'react-content-loader'
 
-const Loader = props => (
+const ProductSkeletonLoader = props => (
     <ContentLoader viewBox="0 0 900 700" height={900} width={1100} {...props}>
         <rect x="30" y="20" rx="8" ry="8" width="250" height="250" />
         <rect x="30" y="275" rx="0" ry="0" width="250" height="18" />
@@ -29,4 +29,4 @@ const Loader = props => (
     </ContentLoader>
 )
 
-export default Loader
+export default ProductSkeletonLoader
