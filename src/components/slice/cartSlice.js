@@ -16,6 +16,7 @@ const cartSlice = createSlice({
         toggleCartModal(state) {
             state.showCartModal = !state.showCartModal;
         },
+
         addToCart(state, action) {
             const existingIndex = state.cartItems.findIndex(
                 (item) => item.id === action.payload.id
@@ -32,6 +33,7 @@ const cartSlice = createSlice({
             }
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
         },
+
         decreaseCart(state, action) {
             const itemIndex = state.cartItems.findIndex(
                 (item) => item.id === action.payload.id
@@ -49,6 +51,7 @@ const cartSlice = createSlice({
 
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
         },
+
         removeFromCart(state, action) {
             state.cartItems.map((cartItem) => {
                 if (cartItem.id === action.payload.id) {
@@ -62,6 +65,7 @@ const cartSlice = createSlice({
                 return state;
             });
         },
+
         getTotals(state, action) {
             let { total, quantity } = state.cartItems.reduce(
                 (cartTotal, cartItem) => {
@@ -82,6 +86,37 @@ const cartSlice = createSlice({
             state.cartTotalQuantity = quantity;
             state.cartTotalAmount = total;
         },
+
+        recalculateCart(state, action) {
+            const productIdsInCart = [];
+            const productsInCart = [];
+
+            state.cartItems.map(cartItem => {
+                productIdsInCart.push(cartItem.id)
+            });
+
+            action.payload.products.map(product => {
+                if (productIdsInCart.includes(product.id)) {
+                    productsInCart[product.id] = product;
+                }
+            });
+
+            state.cartItems.map(cartItem => {
+                const existingIndex = state.cartItems.findIndex(
+                    (item) => item.id === productsInCart[cartItem.id].id
+                );
+
+                state.cartItems[existingIndex] = {
+                    ...state.cartItems[existingIndex],
+                    price: productsInCart[cartItem.id].price,
+                    cartQuantity: state.cartItems[existingIndex].cartQuantity
+                };
+            }
+            );
+
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+        },
+
         clearCart(state, action) {
             state.cartItems = [];
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
@@ -89,7 +124,14 @@ const cartSlice = createSlice({
     },
 });
 
-export const { toggleCartModal, addToCart, decreaseCart, removeFromCart, getTotals, clearCart } =
-    cartSlice.actions;
+export const {
+    toggleCartModal,
+    addToCart,
+    decreaseCart,
+    removeFromCart,
+    getTotals,
+    recalculateCart,
+    clearCart
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

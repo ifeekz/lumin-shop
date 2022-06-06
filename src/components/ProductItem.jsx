@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link } from 'react-router-dom'
 import { addToCart, toggleCartModal } from "./slice/cartSlice";
 
-const Product = (props) => {
+const ProductItem = (props) => {
     const dispatch = useDispatch();
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
@@ -11,13 +11,12 @@ const Product = (props) => {
     }
     return (
         <div>
-            {/* <div style={{ backgroundImage: `url(${image})` }}></div> */}
             <Link to="#" className="group">
                 <div className="w-full aspect-w-1 aspect-h-1 bg-neutral-300 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                     <img
                         src={props.product.image_url}
                         alt={props.product.title.substr(0, 50)}
-                        className="w-full h-full object-center object-cover group-hover:opacity-75"
+                        className="w-full h-48 p-10 object-center object-scale-down group-hover:opacity-75"
                     />
                 </div>
                 <div className="text-center">
@@ -34,9 +33,8 @@ const Product = (props) => {
                         Add to Cart
                     </button>
                 </div>
-
             </Link>
         </div>
     );
 }
-export default Product;
+export default ProductItem;

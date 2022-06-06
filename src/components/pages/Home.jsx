@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { useQuery } from "@apollo/client";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { recalculateCart } from "../slice/cartSlice";
 import Layout from '../Layout/Layout';
-import Product from "../Product";
+import ProductItem from '../ProductItem';
 import Loader from "../Product/Loader";
 // import products from "../../data/products.json";
 import { GET_PRODUCTS } from '../../graphql/queries/product'
@@ -12,9 +13,12 @@ const Home = () => {
     const { loading, error, data, refetch } = useQuery(GET_PRODUCTS, {
         variables: {currency: currency.currentCurrency},
     });
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        refetch({currency: currency.currentCurrency});
+        refetch({ currency: currency.currentCurrency }).then((data) => {
+            dispatch(recalculateCart(data.data));
+        });
     }, [currency])
 
     if (error) return `Error! ${error}`;
@@ -46,7 +50,7 @@ const Home = () => {
                             ? <Loader />
                             : <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
                                 {data.products.map((product) => (
-                                    <Product product={product} key={product.id} />
+                                    <ProductItem product={product} key={product.id} />
                                 ))}
                             </div>}
 

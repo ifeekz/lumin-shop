@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { TrashIcon, ArrowCircleRightIcon } from '@heroicons/react/outline'
+import { TrashIcon, ArrowCircleRightIcon } from '@heroicons/react/outline';
 import {
     toggleCartModal,
     addToCart,
