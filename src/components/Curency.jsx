@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useQuery } from "@apollo/client";
 import { GET_CURRENCIES } from '../graphql/queries/currency';
-import { changeCurency } from './reducers/currencyReducer';
+import { changeCurency } from './slice/currencySlice';
 
 const Currency = () => {
     const dispatch = useDispatch();

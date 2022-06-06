@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { toggleCartModal } from "../reducers/cartReducer";
+import { toggleCartModal } from "../slice/cartSlice";
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 import { Link } from 'react-router-dom'

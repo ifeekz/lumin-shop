@@ -8,11 +8,12 @@ import {
     decreaseCart,
     getTotals,
     removeFromCart
-} from "../reducers/cartReducer";
+} from "../slice/cartSlice";
 import Currency from "../Curency";
 
 const Cart = () => {
     const cart = useSelector((state) => state.cart);
+    const currency = useSelector((state) => state.currency);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -89,7 +90,7 @@ const Cart = () => {
                                             <div>
                                                 {cart.cartItems &&
                                                     cart.cartItems.map((cartItem) => (
-                                                        <div className="flex flex-col cart-item bg-white px-4">
+                                                        <div className="flex flex-col cart-item bg-white px-4" key={cartItem.id}>
                                                             <div className="flex justify-between">
                                                                 <div className="flex-none">
                                                                     <h3 className="font-bold text-xs">{cartItem.title}</h3>
@@ -111,7 +112,7 @@ const Cart = () => {
                                                                             <button onClick={() => handleAddToCart(cartItem)}>+</button>
                                                                         </div>
                                                                         <div className="flex-1 w-1 text-right">
-                                                                            <div>${cartItem.price * cartItem.cartQuantity}</div>
+                                                                            <div><span>{currency.currentCurrency}</span> {cartItem.price * cartItem.cartQuantity}</div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -133,7 +134,7 @@ const Cart = () => {
                                                     <div className="cart-checkout">
                                                         <div className="subtotal">
                                                             <span>Subtotal</span>
-                                                            <span className="amount">${cart.cartTotalAmount}</span>
+                                                            <span className="amount">{currency.currentCurrency} {cart.cartTotalAmount}</span>
                                                         </div>
                                                     </div>
                                                 </div>

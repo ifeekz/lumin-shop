@@ -1,18 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client";
 
 import App from "./App";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 import store from './app/store'
-
-const client = new ApolloClient({
-  uri: 'https://pangaea-interviews.vercel.app/api/graphql',
-  cache: new InMemoryCache()
-});
+import client from './app/client'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
